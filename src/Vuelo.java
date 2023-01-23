@@ -17,6 +17,22 @@ public class Vuelo implements Serializable, Comparable<Vuelo>{
         this.duracion = duracion;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
     @Override
     public int compareTo(Vuelo o) {
         int r = 0;

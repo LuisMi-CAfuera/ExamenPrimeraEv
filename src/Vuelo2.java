@@ -9,7 +9,11 @@ public class Vuelo2 {
         Vuelo v2 = new Vuelo("def567",234);
 
         ArrayList<Vuelo> vuelos = new ArrayList<Vuelo>();
+        ArrayList<Vuelo> vuelos2 = new ArrayList<Vuelo>();
+        File f = new File("vuelo.bin");
+        Vuelo aux = new Vuelo("",0);
 
+        ObjectInputStream fI = new ObjectInputStream(new FileInputStream(f));
 
         vuelos.add(v1);
         vuelos.add(v2);
@@ -19,6 +23,45 @@ public class Vuelo2 {
         almacenar("ficheroEj2.bin",vuelos,true);
 
         recuperar("ficheroEj2.bin");
+
+
+
+        try{
+            do{
+                aux = (Vuelo) fI.readObject();
+
+                if(aux.getDuracion() >= 120 ){
+                    vuelos2.add(aux);
+                }
+
+            }while (true);
+        }catch (EOFException e){
+            System.out.println("Fin de Fichero");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        fI.close();
+
+        Collections.sort(vuelos2);
+
+        ObjectOutputStream fO= null;
+
+        if(!f.exists()){
+            fO = new ObjectOutputStream(new FileOutputStream(f,false));
+        }else {
+            fO = new ObjectOutput2(new FileOutputStream(f,true));
+        }
+
+
+        for(Vuelo vuelo : vuelos2){
+            fO.writeObject(vuelo.toString());
+        }
+        fO.close();
+
+
+
+
+
 
 
 
@@ -65,4 +108,5 @@ public class Vuelo2 {
 
         fO.close();
     }
+
 }
