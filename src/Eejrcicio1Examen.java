@@ -38,7 +38,7 @@ public class Eejrcicio1Examen {
         }
 
         for(Disco disco : discos){
-            fO.writeObject(disco);
+            fO.writeObject(disco.toString());
         }
         fO.close();
 

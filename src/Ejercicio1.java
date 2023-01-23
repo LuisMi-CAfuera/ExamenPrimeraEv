@@ -33,7 +33,7 @@ public class Ejercicio1{
         }
         
         for (Disco disco :discos){
-            fO.writeObject(disco);
+            fO.writeObject(disco.toString());
         }
 
         fO.close();
