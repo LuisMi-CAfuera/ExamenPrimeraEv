@@ -17,19 +17,29 @@ public class Codificar {
         while(car!=-1) {
             if (Character.toLowerCase((char)car)=='a'||Character.toLowerCase((char)car)=='e'||Character.toLowerCase((char)car)=='i'
                     ||Character.toLowerCase((char)car)=='o'||Character.toLowerCase((char)car)=='u'){
+
                 int posicion=vocales.indexOf(Character.toLowerCase((char)car))+1;
+
                 if (posicion>=vocales.length()){
+
                     posicion=0;
+
                 }
                 if (Character.isLowerCase((char) car)){
+
                     car=vocales.charAt(posicion);
+
                 }else{
+
                     car=Character.toUpperCase(vocales.charAt(posicion));
+
                 }
             }
+
             fW.write(car);
             car=fR.read();
         }
+
         fR.close();
         fW.close();
     }

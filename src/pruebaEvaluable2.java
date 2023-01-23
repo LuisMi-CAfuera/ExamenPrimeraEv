@@ -73,6 +73,8 @@ public class pruebaEvaluable2 {
 		if (!vuelos.isEmpty()) {
 			final int TAM = vuelos.size();
 
+			//Ordenar el hashmap por orden alfabetico
+
             String[] claves = new String[TAM];
 			int[] duracion = new int[TAM];
 
