@@ -35,11 +35,7 @@ public class Vuelo implements Serializable, Comparable<Vuelo>{
 
     @Override
     public int compareTo(Vuelo o) {
-        int r = 0;
-
-        r=id.compareTo(o.id);
-
-        return r;
+        return this.duracion - o.duracion;
     }
 
     @Override
