@@ -2,8 +2,9 @@ import java.io.Serial;
 import java.io.Serializable;
 
 public class Disco implements Serializable, Comparable<Disco> {
+
     @Serial
-    private static final long serialVersionUID = 3553341649517142560L;
+    private static final long serialVersionUID = 2571678089051585386L;
     private String titulo;
     private String grupo;
     private float precio;
